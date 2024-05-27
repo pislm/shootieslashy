@@ -36,12 +36,19 @@ current = true
 [node name="Sword" type="KinematicBody2D" parent="."]
 position = Vector2( 100, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-shape = SubResource( 2 )
-
 [node name="Sprite" type="Sprite" parent="Sword"]
 rotation = 1.5708
 texture = ExtResource( 4 )
+
+[node name="SwordBody" type="RigidBody2D" parent="Sword"]
+contacts_reported = 290
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/SwordBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sword"]
+shape = SubResource( 2 )
 
 [node name="HealthText" type="TextEdit" parent="."]
 margin_left = -502.0
